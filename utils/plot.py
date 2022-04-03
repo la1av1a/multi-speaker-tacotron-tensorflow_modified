@@ -5,6 +5,7 @@ from jamo import h2j, j2hcj
 matplotlib.use('Agg')
 matplotlib.rc('font', family="NanumBarunGothic")
 import matplotlib.pyplot as plt
+from matplotlib import rc  ### 이 줄과
 
 from text import PAD, EOS
 from utils import add_postfix
@@ -12,6 +13,9 @@ from text.korean import normalize
 
 def plot(alignment, info, text):
     char_len, audio_len = alignment.shape # 145, 200
+
+    rc('font', family='AppleGothic')  ## 이 두 줄을
+    plt.rcParams['axes.unicode_minus'] = False  ## 추가해줍니다.
 
     fig, ax = plt.subplots(figsize=(char_len/5, 5))
     im = ax.imshow(

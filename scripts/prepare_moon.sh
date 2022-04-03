@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 1. Download and extract audio and texts
-python -m datasets.moon.download
+#python -m datasets.moon.download
 
 # 2. Split audios on silence
 python -m audio.silence --audio_pattern "./datasets/moon/audio/*.wav" --method=pydub
